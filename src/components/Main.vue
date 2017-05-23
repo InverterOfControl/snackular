@@ -1,8 +1,11 @@
 <template>
   <div class="row">
       <div class="col-md-8">
-          <h2>The Snacks</h2>
-          <snackList></snackList>    
+          <h2>Snacks</h2>
+          <snackList></snackList>
+          <h2>Compensations</h2>
+          <compensation-list></compensation-list>
+          <total-balance class="pull-right"></total-balance>    
       </div>
       <div class="col-md-4">
           <newSnack></newSnack>    
@@ -13,6 +16,8 @@
 <script>
 import NewSnack from '@/components/NewSnack'
 import SnackList from '@/components/SnackList'
+import CompensationList from '@/components/CompensationList'
+import TotalBalance from '@/components/TotalBalance'
 
 export default {
   name: 'main',
@@ -26,7 +31,9 @@ export default {
   },
   components: {
     SnackList,
-    NewSnack
+    NewSnack,
+    CompensationList,
+    TotalBalance
   }
 }
 </script>

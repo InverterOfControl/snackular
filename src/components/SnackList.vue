@@ -34,9 +34,6 @@ export default {
     return {}
   },
   computed: {
-    compensations () {
-      return this.$store.getters.allCompensations
-    },
     snacks () {
       return this.$store.getters.allSnacks
     },
