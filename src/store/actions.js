@@ -21,3 +21,7 @@ export const increaseSnack = ({ commit }, snackInstance) => {
 export const addCompensation = ({ commit }, compensationAmount) => {
   commit('ADD_COMPENSATION', compensationAmount)
 }
+
+export const removeCompensation = ({ commit }, compensation) => {
+  commit('REMOVE_COMPENSATION', compensation)
+}

@@ -70,6 +70,10 @@ const mutations = {
 
   ADD_COMPENSATION (state, compensationAmount) {
     state.compensations.push({date: new Date(), amount: parseFloat(compensationAmount)})
+  },
+
+  REMOVE_COMPENSATION (state, compensation) {
+    state.compensations.splice(state.compensations.indexOf(compensation), 1)
   }
 }
 

@@ -1,9 +1,15 @@
 <template>
   <div>
-       <h1>Add a snacktype.</h1>
+       <h4>Add a snacktype</h4>
        <form>
-          <input type="text" v-model="typeName" />
-          <input type="text" v-model="typePrice" />
+         <div class="form-group">
+          <label for="typeName">Name</label>
+          <input class="form-control" type="text" v-model="typeName" id="typeName"/>
+        </div>
+        <div class="form-group">
+          <label for="typePrice">Price</label>
+          <input class="form-control" type="text" v-model="typePrice" id="typePrice"/>
+        </div>
            <button @click="addSnackType" class="btn btn-primary">Add snacktype</button>
        </form>
   </div>

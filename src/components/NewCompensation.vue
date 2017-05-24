@@ -1,9 +1,12 @@
 <template>
   <div>
-       <h1>Add a compensation.</h1>
-       <form>
-       <input type="text" v-model="compensationAmount" />
-           <button @click="add" class="btn btn-primary">Add compensation</button>
+       <h4>Add a compensation</h4>
+       <form class="form-horizontal">
+         <div class="form-group">
+         <label for="amountInput">Amount</label>
+         <input class="form-control" id="amountInput" type="text" v-model="compensationAmount" />
+         </div>
+          <button @click="add" class="btn btn-primary">Add compensation</button>
        </form>
   </div>
 </template>

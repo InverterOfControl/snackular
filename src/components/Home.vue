@@ -1,13 +1,13 @@
 <template>
-  <div class="row content">
-      <div class="col-md-9">
-          <h3>Snacks</h3>
+  <div class="row">
+      <div class="col-md-8">
+          <h2>Snacks</h2>
           <snackList></snackList>
-          <h3>Compensations</h3>
+          <h2>Compensations</h2>
           <compensation-list></compensation-list>
           <total-balance class="pull-right"></total-balance>    
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
           <newSnack></newSnack>    
       </div>
   </div>
@@ -20,14 +20,9 @@ import CompensationList from '@/components/CompensationList'
 import TotalBalance from '@/components/TotalBalance'
 
 export default {
-  name: 'main',
+  name: 'home',
   data () {
-    return {
-      snacks: [
-        { date: new Date(), name: 'Snickers', amount: 2, cost: 1.6 },
-        { date: new Date(), name: 'Mars', amount: 1, cost: 0.8 }
-      ]
-    }
+    return{}
   },
   components: {
     SnackList,
@@ -41,5 +36,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
   .clickable{ cursor: pointer }
-  .content { margin-top: 15px; }
 </style>

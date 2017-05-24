@@ -1,18 +1,17 @@
 <template>
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Settings</h2>
-        </div>
+    <div class="row content">
         <div class="col-md-8">
-            <h2>Snack Types</h2>    
+            <h4>Snack Types</h4>    
             <snack-type-list></snack-type-list>
             
         </div>
         <div class="col-md-4">
             <new-snack-type></new-snack-type>
-        </div>
-        <div class="col-md-8">
+            <br />
             <new-compensation></new-compensation>
+        </div>
+        <div class="col-md-4 offset-md-8">
+            
         </div>
     </div>
 </template>

@@ -1,11 +1,13 @@
 <template>
   <div>
-       <h1>Add a snack.</h1>
        <form>
-           <select v-model="newSnack">
+         <div class="form-group">
+          <label class="mr-sm-2" for="inlineFormCustomSelect">What did you eat?</label>
+           <select class="custom-select mb-2 mr-sm-2 mb-sm-0" v-model="newSnack">
             <option disabled value="">Please select a snack</option>
             <option v-for="type in snackTypes" v-bind:value="type">{{ type.name }}</option>
           </select>
+          </div>
            <button @click="add" class="btn btn-primary">Add snack</button>
        </form>
   </div>
