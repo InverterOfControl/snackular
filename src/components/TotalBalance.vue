@@ -2,6 +2,7 @@
   <div>
     <p>Total balance: <span v-bind:class="{positive: isPositive, negative: !isPositive}">{{ totalBalance | currency('€ ', 2)}}</span></p>
     <button class="btn btn-sm btn-secondary" v-bind:class="{active: doApplyDiscount}" @click="applyDiscount">{{doApplyDiscount ? "Discounted" : "Undiscounted"}}</button>
+    <i class="fa fa-question-circle-o pull-right" v-tooltip:right="discountText"></i>
   </div>
 </template>
 
@@ -30,6 +31,9 @@ export default {
     },
     isPositive () {
       return this.$store.getters.totalBalance(this.doApplyDiscount) >= 0
+    },
+    discountText () {
+      return 'The following rules for discounting are applied:\n"3 snacks only cost 2€"'
     }
   }
 }
@@ -42,4 +46,7 @@ export default {
   .negative {
       color: red;
   }
+  .tooltip-inner {
+    white-space:pre-wrap;
+}
 </style>

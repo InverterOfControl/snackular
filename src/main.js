@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Vue2Filters from 'vue2-filters'
 import store from './store'
+import './directives/tooltip-directive'
 
 Vue.use(Vue2Filters)
 
