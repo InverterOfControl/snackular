@@ -1,14 +1,14 @@
-export const snackTypes = state => state.snackTypes
+export const snackTypes = state => state.snackTypes.snackTypes
 
-export const allSnacks = state => state.takenSnacks
+export const allSnacks = state => state.snacks.takenSnacks
 
-export const allCompensations = state => state.compensations
+export const allCompensations = state => state.compensations.compensations
 
 export const totalBalance = state => (doApplyDiscount) => {
   var compensations = this.compensationSum(state)
 
   if (doApplyDiscount) {
-    var numberOfSnacks = state.takenSnacks.map(s => s.amount).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
+    var numberOfSnacks = state.snacks.takenSnacks.map(s => s.amount).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
     var packs = parseInt(numberOfSnacks / 3)
 
     var fixed = packs * 2
@@ -22,9 +22,9 @@ export const totalBalance = state => (doApplyDiscount) => {
 }
 
 export const compensationSum = state => {
-  return state.compensations.map(s => s.amount).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
+  return state.compensations.compensations.map(s => s.amount).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
 }
 
 export const snackSum = state => {
-  return state.takenSnacks.map(s => s.cost).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
+  return state.snacks.takenSnacks.map(s => s.cost).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
 }
