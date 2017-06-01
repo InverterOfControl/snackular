@@ -8,6 +8,10 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+app.get('/', function(req, res, next){
+    res.send('ok');
+});
+
 app.get('/snacks', function (req, res, next) {
     try {
         console.log('getting snacks...');

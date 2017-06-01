@@ -9,8 +9,6 @@ import compensations from './modules/compensations'
 
 Vue.use(Vuex)
 
-// create the Vuex instance by combining the state and mutations objects
-// then export the Vuex store for use by our components
 export default new Vuex.Store({
   modules: {
     snacks,
