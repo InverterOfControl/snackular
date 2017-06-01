@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h4>Add a Snack</h4>
        <form>
          <div class="form-group">
           <label class="mr-sm-2" for="inlineFormCustomSelect">What did you eat?</label>

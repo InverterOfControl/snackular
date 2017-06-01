@@ -9,19 +9,17 @@ export default {
     return {}
   },
   computed: {
+    compensationSum () {
+      return this.$store.getters.allCompensations.map(s => s.amount).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
+    },
+    debtSum () {
+      return this.$store.getters.allSnacks.map(s => s.cost).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
+    },
     totalBalance () {
-      var compSum = this.$store.getters.allCompensations.map(s => s.amount).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
-
-      var debtSum = this.$store.getters.allSnacks.map(s => s.cost).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
-
-      return (compSum - debtSum).toFixed(2)
+      return (this.compensationSum - this.debtSum).toFixed(2)
     },
     isPositive () {
-      var compSum = this.$store.getters.allCompensations.map(s => s.amount).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
-
-      var debtSum = this.$store.getters.allSnacks.map(s => s.cost).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
-
-      return compSum > debtSum
+      return this.compensationSum > this.debtSum
     }
   }
 }

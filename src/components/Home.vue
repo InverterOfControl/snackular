@@ -9,6 +9,8 @@
       </div>
       <div class="col-md-4">
           <newSnack></newSnack>    
+          <br />
+          <new-compensation></new-compensation>
       </div>
   </div>
 </template>
@@ -18,17 +20,19 @@ import NewSnack from '@/components/NewSnack'
 import SnackList from '@/components/SnackList'
 import CompensationList from '@/components/CompensationList'
 import TotalBalance from '@/components/TotalBalance'
+import NewCompensation from '@/components/NewCompensation'
 
 export default {
   name: 'home',
   data () {
-    return{}
+    return {}
   },
   components: {
     SnackList,
     NewSnack,
     CompensationList,
-    TotalBalance
+    TotalBalance,
+    NewCompensation
   }
 }
 </script>

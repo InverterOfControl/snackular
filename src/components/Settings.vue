@@ -7,8 +7,6 @@
         </div>
         <div class="col-md-4">
             <new-snack-type></new-snack-type>
-            <br />
-            <new-compensation></new-compensation>
         </div>
         <div class="col-md-4 offset-md-8">
             
@@ -19,7 +17,6 @@
 <script>
 import SnackTypeList from '@/components/SnackTypeList'
 import NewSnackType from '@/components/NewSnackType'
-import NewCompensation from '@/components/NewCompensation'
 
 export default {
   name: 'settings',
@@ -28,8 +25,7 @@ export default {
   },
   components: {
     SnackTypeList,
-    NewSnackType,
-    NewCompensation
+    NewSnackType
   }
 }
 </script>
