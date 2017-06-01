@@ -11,7 +11,7 @@
           <router-link to="/" :exact="true" class="nav-link">Home</router-link>
       </li>
       <li class="nav-item">
-         <router-link to="/settings" :exact="true" class="nav-link">Settings</router-link>
+         <router-link to="/snack-types" :exact="true" class="nav-link">Snack Types</router-link>
       </li>
     </ul>
   </div>

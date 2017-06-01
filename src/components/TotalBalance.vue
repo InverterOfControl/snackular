@@ -1,25 +1,35 @@
 <template>
+  <div>
     <p>Total balance: <span v-bind:class="{positive: isPositive, negative: !isPositive}">{{ totalBalance | currency('€ ', 2)}}</span></p>
+    <button class="btn btn-sm btn-secondary" v-bind:class="{active: doApplyDiscount}" @click="applyDiscount">{{doApplyDiscount ? "Discounted" : "Undiscounted"}}</button>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'totalBalance',
   data () {
-    return {}
+    return {
+      doApplyDiscount: false
+    }
+  },
+  methods: {
+    applyDiscount () {
+      this.doApplyDiscount = !this.doApplyDiscount
+    }
   },
   computed: {
     compensationSum () {
-      return this.$store.getters.allCompensations.map(s => s.amount).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
+      return this.$store.getters.compensationSum
     },
     debtSum () {
-      return this.$store.getters.allSnacks.map(s => s.cost).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
+      return this.$store.getters.snackSum
     },
     totalBalance () {
-      return (this.compensationSum - this.debtSum).toFixed(2)
+      return this.$store.getters.totalBalance(this.doApplyDiscount).toFixed(2)
     },
     isPositive () {
-      return this.compensationSum > this.debtSum
+      return this.$store.getters.totalBalance(this.doApplyDiscount) >= 0
     }
   }
 }

@@ -13,8 +13,8 @@ export default new Router({
       component: Home
     },
     {
-      path: '/settings',
-      name: 'Settings',
+      path: '/snack-types',
+      name: 'Snack Types',
       component: Settings
     }
   ]

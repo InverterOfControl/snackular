@@ -37,18 +37,8 @@ export default {
     snacks () {
       return this.$store.getters.allSnacks
     },
-    snackSum: function () {
-      var num = this.$store.getters.allSnacks.map(s => s.amount).reduce((a, b) => a + b, 0)
-
-      var packs = parseInt(num / 3)
-
-      var fixed = packs * 2
-
-      var rest = (num % 3) * 0.8
-
-      return fixed + rest
-
-      // var sum = this.$store.getters.allSnacks.map(s => s.cost).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
+    snackSum () {
+      return this.$store.getters.snackSum
     }
   },
   methods: {
