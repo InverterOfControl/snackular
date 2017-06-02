@@ -29,6 +29,9 @@ export default {
   data () {
     return {}
   },
+  created () {
+    this.$store.dispatch('loadCompensations')
+  },
   computed: {
     compensations () {
       return this.$store.getters.allCompensations

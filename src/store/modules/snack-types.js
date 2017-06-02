@@ -1,4 +1,4 @@
-import { ADD_SNACKTYPE, DELETE_SNACKTYPE } from '../mutation-types'
+import { ADD_SNACKTYPE, DELETE_SNACKTYPE, SET_SNACKTYPES } from '../mutation-types'
 
 // initial state
 const state = {
@@ -17,6 +17,9 @@ const mutations = {
   },
   [DELETE_SNACKTYPE] (state, snackType) {
     state.snackTypes.splice(state.snackTypes.indexOf(snackType), 1)
+  },
+  [SET_SNACKTYPES] (state, snackTypes) {
+    state.snackTypes = snackTypes.data
   }
 }
 

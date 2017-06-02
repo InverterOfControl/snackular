@@ -24,6 +24,9 @@ export default {
       return this.$store.getters.snackTypes
     }
   },
+  created () {
+    this.$store.dispatch('loadSnackTypes')
+  },
   methods: {
     deleteSnackType (st) {
       this.$store.dispatch('deleteSnackType', st)
