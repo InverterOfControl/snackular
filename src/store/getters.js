@@ -26,5 +26,5 @@ export const compensationSum = state => {
 }
 
 export const snackSum = state => {
-  return state.snacks.takenSnacks.map(s => s.cost).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
+  return state.snacks.takenSnacks.map(s => s.cost * s.amount).reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
 }

@@ -30,9 +30,6 @@
 <script>
 export default {
   name: 'snackList',
-  created () {
-    this.$store.dispatch('loadSnacks')
-  },
   data () {
     return {}
   },

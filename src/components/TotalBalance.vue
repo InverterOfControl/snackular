@@ -2,7 +2,7 @@
   <div>
     <p>Total balance: <span v-bind:class="{positive: isPositive, negative: !isPositive}">{{ totalBalance | currency('€ ', 2)}}</span></p>
     <button class="btn btn-sm btn-secondary" v-bind:class="{active: doApplyDiscount}" @click="applyDiscount">{{doApplyDiscount ? "Discounted" : "Undiscounted"}}</button>
-    <i class="fa fa-question-circle-o pull-right" v-tooltip:right="discountText"></i>
+    <i class="fa fa-question-circle-o" v-tooltip:right="discountText"></i>
   </div>
 </template>
 

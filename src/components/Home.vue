@@ -1,16 +1,22 @@
 <template>
   <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-4">
           <h2>Snacks</h2>
           <snackList></snackList>
+      </div>
+      <div class="col-md-4">
           <h2>Compensations</h2>
           <compensation-list></compensation-list>
-          <total-balance class="pull-right"></total-balance>    
       </div>
       <div class="col-md-4">
           <newSnack></newSnack>    
           <br />
           <new-compensation></new-compensation>
+          <br />
+      
+      </div>
+      <div class="col-md-8">
+          <total-balance class="pull-right"></total-balance>    
       </div>
   </div>
 </template>
@@ -26,6 +32,9 @@ export default {
   name: 'home',
   data () {
     return {}
+  },
+  created () {
+    this.$store.dispatch('loadData')
   },
   components: {
     SnackList,

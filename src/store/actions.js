@@ -1,23 +1,26 @@
 import * as types from './mutation-types'
 import axios from 'axios'
 
+/*
+TODO:
+for better live-performance the commits should not wait for api-calls to complete.
+
+One could check for errors in the callback and revert the changes to the state in order to keep the state in sync with the database
+*/
+
 const api = axios.create({
   baseURL: 'http://localhost:3000/api/'
 })
 
-export const loadSnacks = ({commit, state}) => {
+export const loadData = ({commit, state}) => {
   api.get('/snack').then(function (snacks) {
     commit(types.SET_SNACKS, snacks)
   })
-}
 
-export const loadSnackTypes = ({commit, state}) => {
   api.get('/snackTypes').then(function (snackTypes) {
     commit(types.SET_SNACKTYPES, snackTypes)
   })
-}
 
-export const loadCompensations = ({commit, state}) => {
   api.get('/compensations').then(function (compensations) {
     commit(types.SET_COMPENSATIONS, compensations)
   })

@@ -14,11 +14,6 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
-    "bluebird": "^3.5.0",
-    "body-parser": "^1.17.2",
-    "firebase": "^4.1.1",
-    "js-cookie": "^2.1.4",
-    "sqlite": "^2.8.0",
     "vue": "^2.2.6",
     "vue-router": "^2.3.1",
     "vuex": "^2.3.1",

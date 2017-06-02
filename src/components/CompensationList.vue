@@ -9,7 +9,7 @@
       </thead>
       <tbody>
         <tr v-for="compensation in compensations">
-          <td colspan="3">{{ new Date(compensation.date).toLocaleDateString() }}</td>
+          <td colspan="3">{{ new Date(compensation.createdOn).toLocaleDateString() }}</td>
           <td colspan="2">{{ compensation.amount | currency('€ ', 2) }}</td>
           <td><button @click="remove(compensation)" class="btn btn-warning btn-sm"><i class="fa fa-remove"></i></button></td>
         </tr>
@@ -28,9 +28,6 @@ export default {
   name: 'compensationList',
   data () {
     return {}
-  },
-  created () {
-    this.$store.dispatch('loadCompensations')
   },
   computed: {
     compensations () {
