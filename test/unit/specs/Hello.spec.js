@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import Hello from '@/components/Hello'
+import Home from '@/components/Home'
 
-describe('Hello.vue', () => {
-  it('should render correct contents', () => {
-    const Constructor = Vue.extend(Hello)
+describe('Home.vue', () => {
+  it('should render a Snack-Header contents', () => {
+    const Constructor = Vue.extend(Home)
     const vm = new Constructor().$mount()
-    expect(vm.$el.querySelector('.hello h1').textContent)
-      .to.equal('Welcome to Your Vue.js App')
+    expect(vm.$el.querySelector('.col-md-4 > h2').textContent)
+      .to.equal('Snacks')
   })
 })
